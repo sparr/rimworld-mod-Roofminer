@@ -37,7 +37,9 @@ namespace Roofminer
 			locQueued.Add(loc);
 
 			int numDesignated = 0;
-			while (locQueue.Count > 0 && numDesignated <= 1000) {
+
+			while (locQueue.Count > 0 && numDesignated < 1201) {
+
 				loc = locQueue.Dequeue();
 
 				// Log.Message("Deqeueing " + loc.ToString());
