@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Roofminer</name>
+	<author>Sparr</author>
+	<targetVersion>1.0.2059</targetVersion>
+	<description>V0.1
+
+This mod lets you designate all connected tiles of the same roof thickness to be mined.
+
+Thanks to Toasteh &amp; Ogliss &amp; the previous developers of Veinminer which this mod is based on.
+
+Source: http://github.com/sparr/rimworldmod-Roofminer</description>
+</ModMetaData>
