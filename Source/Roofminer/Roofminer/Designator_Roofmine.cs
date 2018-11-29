@@ -26,14 +26,20 @@ namespace Roofminer
 		}
 
 		public override void DesignateSingleCell(IntVec3 loc) {
+
 			RoofDef originalLocRoof = base.Map.roofGrid.RoofAt(loc);
+			// tiles are added to a queue to ensure we process closer tiles first
 			Queue<IntVec3> locQueue = new Queue<IntVec3>();
+			// remember every tile we have queued, to avoid duplicating effort
 			HashSet<IntVec3> locQueued = new HashSet<IntVec3>();
+
 			locQueue.Enqueue(loc);
 			locQueued.Add(loc);
+
 			int numDesignated = 0;
 			while (locQueue.Count > 0 && numDesignated <= 1000) {
 				loc = locQueue.Dequeue();
+
 				// Log.Message("Deqeueing " + loc.ToString());
 				if (!loc.InBounds(base.Map))
 					continue;
@@ -58,9 +64,11 @@ namespace Roofminer
 				// Log.Message("checking DesignationAt");
 				if (base.Map.designationManager.DesignationAt(loc, DesignationDefOf.Mine) != null)
 				  continue;
+
 	 			// Log.Message("Designating " + loc.ToString());
 				base.DesignateSingleCell(loc);
 				numDesignated++;
+
 				foreach (IntVec3 delta in NeighborCoords) {
 					IntVec3 newLoc = loc + delta;
 					if (!locQueued.Contains(newLoc)) {
@@ -69,6 +77,7 @@ namespace Roofminer
 						locQueued.Add(newLoc);
 					}
 				}
+
 			}
 		}
 
