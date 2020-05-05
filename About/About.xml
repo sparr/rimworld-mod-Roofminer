@@ -2,7 +2,14 @@
 <ModMetaData>
 	<name>Roofminer</name>
 	<author>Sparr</author>
-	<targetVersion>1.0.2069</targetVersion>
+  <packageId>Sparr.Roofminer</packageId>
+  <url>https://github.com/sparr/rimworld-mod-Roofminer</url>
+  <supportedVersions>
+    <li>1.0</li>
+    <li>1.1</li>
+  </supportedVersions>
+  <modDependencies />
+  <loadAfter />
 	<description>A designator for mining a connected set of mountain tiles that share a roof type (unroofed, constructed, thin rock, overhead mountain, etc).
 
 The primary purpose is to mine tunnels and rooms in mountains that won't trigger infestations.
@@ -10,5 +17,4 @@ The primary purpose is to mine tunnels and rooms in mountains that won't trigger
 Thanks to Toasteh &amp; Ogliss &amp; the previous developers of Veinminer which this mod is based on.
 
 http://github.com/sparr/rimworld-mod-Roofminer</description>
-  <url>https://github.com/sparr/rimworld-mod-Roofminer</url>
 </ModMetaData>
